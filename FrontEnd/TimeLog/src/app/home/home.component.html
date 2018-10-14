@@ -1,0 +1,19 @@
+<p>
+  home works!
+</p>
+
+<div class="row">
+  <div class="col-md-4">
+   <!-- // main form  -->
+      <app-update (joggingCreated)="createOrUpdateJogging($event)" [joggingInfo]="currentJogging"></app-update>
+  </div>
+
+  <div class="col-md-8">
+      <app-edit [joggingData]="joggingData" (editClicked)="editClicked($event)" (newClicked)="editClicked($event)" (recordDeleted)="deleteClicked($event)"></app-edit>
+
+      <!-- <app-edit [joggingData]="joggingData"></app-edit> -->
+
+      <app-edit [joggingData]="joggingData" (editClicked)="editClicked($event)" (newClicked)="newClicked()" (recordDeleted)="deleteClicked($event)"></app-edit>
+
+  </div>
+</div>

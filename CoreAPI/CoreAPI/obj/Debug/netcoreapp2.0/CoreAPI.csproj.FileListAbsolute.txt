@@ -1,0 +1,11 @@
+U:\Tami\Dev\angular\Core\CoreAPI\CoreAPI\bin\Debug\netcoreapp2.0\CoreAPI.deps.json
+U:\Tami\Dev\angular\Core\CoreAPI\CoreAPI\bin\Debug\netcoreapp2.0\CoreAPI.runtimeconfig.json
+U:\Tami\Dev\angular\Core\CoreAPI\CoreAPI\bin\Debug\netcoreapp2.0\CoreAPI.runtimeconfig.dev.json
+U:\Tami\Dev\angular\Core\CoreAPI\CoreAPI\bin\Debug\netcoreapp2.0\CoreAPI.dll
+U:\Tami\Dev\angular\Core\CoreAPI\CoreAPI\bin\Debug\netcoreapp2.0\CoreAPI.pdb
+U:\Tami\Dev\angular\Core\CoreAPI\CoreAPI\obj\Debug\netcoreapp2.0\CoreAPI.csprojAssemblyReference.cache
+U:\Tami\Dev\angular\Core\CoreAPI\CoreAPI\obj\Debug\netcoreapp2.0\CoreAPI.csproj.CoreCompileInputs.cache
+U:\Tami\Dev\angular\Core\CoreAPI\CoreAPI\obj\Debug\netcoreapp2.0\CoreAPI.AssemblyInfoInputs.cache
+U:\Tami\Dev\angular\Core\CoreAPI\CoreAPI\obj\Debug\netcoreapp2.0\CoreAPI.AssemblyInfo.cs
+U:\Tami\Dev\angular\Core\CoreAPI\CoreAPI\obj\Debug\netcoreapp2.0\CoreAPI.dll
+U:\Tami\Dev\angular\Core\CoreAPI\CoreAPI\obj\Debug\netcoreapp2.0\CoreAPI.pdb
