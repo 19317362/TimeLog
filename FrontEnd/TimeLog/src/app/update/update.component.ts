@@ -6,21 +6,21 @@ import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
   styleUrls: ['./update.component.css']
 })
 export class UpdateComponent implements OnInit {
-  @Output() joggingCreated = new EventEmitter<any>();
-  @Input() joggingInfo: any;
+  @Output() loggingCreated = new EventEmitter<any>();
+  @Input() loggingInfo: any;
   public buttonText = 'Save';
 
   constructor() { 
     this.clearAllInfo();
-    console.log(this.joggingInfo.date);
+    console.log(this.loggingInfo.date);
   }
 
   ngOnInit() {
   }
 
   private clearAllInfo = function() {
-    // Create an empty jogging object
-    this.joggingInfo = {
+    // Create an empty logging object
+    this.loggingInfo = {
       id: undefined,
       date: '',
       distanceInMeters: 0,
@@ -28,8 +28,8 @@ export class UpdateComponent implements OnInit {
     };
   };
 
-  public addOrUpdateJoggingRecord = function(event) {
-    this.joggingCreated.emit(this.joggingInfo);
+  public addOrUpdateLoggingRecord = function(event) {
+    this.loggingCreated.emit(this.loggingInfo);
     this.clearAllInfo();
   };
 

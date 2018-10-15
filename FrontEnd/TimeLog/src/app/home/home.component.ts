@@ -7,19 +7,22 @@ import * as _ from 'lodash';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-  public joggingData: Array<any>;
-  public currentJogging: any;
+export class HomeComponent {
+  public loggingData: Array<any>;
+  public currentLogging: any;
+
+  // implements OnInit
 
   constructor(private timeService: TimeService) {
-    timeService.get().subscribe((data: any) => this.joggingData = data);
-    this.currentJogging = this.setInitialValuesForJoggingData();
+
+    timeService.get().subscribe((data: any) => this.loggingData = data);
+    this.currentLogging = this.setInitialValuesForLoggingData();
    }
 
   ngOnInit() {
   }
 
-  private setInitialValuesForJoggingData () {
+  private setInitialValuesForLoggingData () {
     return {
       id: undefined,
       date: '',
@@ -28,39 +31,39 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  public createOrUpdateJogging = function(jogging: any) {
-    // if jogging is present in joggingData, we can assume this is an update
+  public createOrUpdateLogging = function(logging: any) {
+    // if logging is present in loggingData, we can assume this is an update
     // otherwise it is adding a new element
-    let joggingWithId;
-    joggingWithId = _.find(this.joggingData, (el => el.id === jogging.id));
+    let loggingWithId;
+    loggingWithId = _.find(this.loggingData, (el => el.id === logging.id));
 
-    if (joggingWithId) {
-      const updateIndex = _.findIndex(this.joggingData, {id: joggingWithId.id});
-      this.timeService.update(jogging).subscribe(
-        joggingRecord =>  this.joggingData.splice(updateIndex, 1, jogging)
+    if (loggingWithId) {
+      const updateIndex = _.findIndex(this.loggingData, {id: loggingWithId.id});
+      this.timeService.update(logging).subscribe(
+        loggingRecord =>  this.loggingData.splice(updateIndex, 1, logging)
       );
     } else {
-      this.timeService.add(jogging).subscribe(
-        joggingRecord => this.joggingData.push(jogging)
+      this.timeService.add(logging).subscribe(
+        loggingRecord => this.loggingData.push(logging)
       );
     }
 
-    this.currentJogging = this.setInitialValuesForJoggingData();
+    this.currentLogging = this.setInitialValuesForLoggingData();
   };
 
 
   public editClicked = function(record) {
-    this.currentJogging = record;
+    this.currentLogging = record;
   };
 
   public newClicked = function() {
-    this.currentJogging = this.setInitialValuesForJoggingData(); 
+    this.currentLogging = this.setInitialValuesForLoggingData(); 
   };
 
   public deleteClicked(record) {
-    const deleteIndex = _.findIndex(this.joggingData, {id: record.id});
+    const deleteIndex = _.findIndex(this.loggingData, {id: record.id});
     this.timeService.remove(record).subscribe(
-      result => this.joggingData.splice(deleteIndex, 1)
+      result => this.loggingData.splice(deleteIndex, 1)
     );
   }
 

@@ -2,26 +2,32 @@
   edit works!
 </p>
 
-<a href="#" id="new-button">New</a>
-<table>
+<!-- <a href="#" id="new-button">New</a> -->
+<button type="button" class="btn btn-primary" (click)="newRecord()">New</button>
+
+<table class="table">
 <thead>
     <tr>
         <th>Date</th>
         <th>Distance</th>
         <th>Time</th>
         <th>Average speed</th>
-        <th>Commands</th>
+        <th>Options</th>
     </tr>
 </thead>
 <tbody>
-    <tr *ngFor="let joggingInfo of joggingData"> 
-        <td>{{ joggingInfo.date | date:'shortDate' }}</td>
-        <td>{{ joggingInfo.distanceInMeters | number: '1.2-2' }}</td>
-        <td>{{ joggingInfo.timeInSeconds / 60 | number: '1.0-0' }}:{{ joggingInfo.timeInSeconds % 60 |number: '2.0-0' }}</td>
-        <td>{{ (joggingInfo.distanceInMeters / joggingInfo.timeInSeconds) * 3.6 | number:'1.2-2' }}</td>
+    <tr *ngFor="let loggingInfo of loggingData"> 
+        <td>{{ loggingInfo.date | date:'short' }}</td>
+        <td>{{ loggingInfo.distanceInMeters | number: '1.2-2' }}</td>
+        <td>{{ loggingInfo.timeInSeconds / 60 | number: '1.0-0' }}:{{ loggingInfo.timeInSeconds % 60 |number: '2.0-0' }}</td>
+        <td>{{ (loggingInfo.distanceInMeters / loggingInfo.timeInSeconds) * 3.6 | number:'1.2-2' }}</td>
         <td>
-            <a href="#" (click)="editRecord(this)"> Edit </a>
-            <a href="#" (click)="deleteRecord(this)"> Delete </a>
+
+                <a (click)="editRecord(loggingInfo)" class="link">Edit</a>
+                <a (click)="deleteRecord(loggingInfo)" class="link">Delete</a>
+
+            <!-- <a href="#" (click)="editRecord(this)"> Edit </a> -->
+            <!-- <a href="#" (click)="deleteRecord(this)"> Delete </a> -->
         </td>
     </tr>
 </tbody>

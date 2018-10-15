@@ -8,14 +8,13 @@ export class TimeService {
   private headers: HttpHeaders;
   private accessPointUrl: string = 'http://localhost:44102/api/ClassTimes';
 
-  // http://localhost:44102/
 
   constructor(private http: HttpClient) { 
     this.headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
   }
 
   public get() {
-    // Get all jogging data
+    // Get all time logs data
     return this.http.get(this.accessPointUrl, {headers: this.headers});
   }
 

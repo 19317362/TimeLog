@@ -5,15 +5,15 @@
 <div class="row">
   <div class="col-md-4">
    <!-- // main form  -->
-      <app-update (joggingCreated)="createOrUpdateJogging($event)" [joggingInfo]="currentJogging"></app-update>
+      <app-update (loggingCreated)="createOrUpdateLogging($event)" [loggingInfo]="currentLogging"></app-update>
   </div>
 
   <div class="col-md-8">
-      <app-edit [joggingData]="joggingData" (editClicked)="editClicked($event)" (newClicked)="editClicked($event)" (recordDeleted)="deleteClicked($event)"></app-edit>
+      <!-- <app-edit [loggingData]="loggingData" (editClicked)="editClicked($event)" (newClicked)="editClicked($event)" (recordDeleted)="deleteClicked($event)"></app-edit> -->
 
-      <!-- <app-edit [joggingData]="joggingData"></app-edit> -->
+      <!-- <app-edit [loggingData]="loggingData"></app-edit> -->
 
-      <app-edit [joggingData]="joggingData" (editClicked)="editClicked($event)" (newClicked)="newClicked()" (recordDeleted)="deleteClicked($event)"></app-edit>
+      <app-edit [loggingData]="loggingData" (editClicked)="editClicked($event)" (newClicked)="newClicked()" (recordDeleted)="deleteClicked($event)"></app-edit>
 
   </div>
 </div>
